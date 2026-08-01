@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carolina Carrera Hermosillo — Portfolio</title>
+<meta property="og:title" content="Carolina Carrera Hermosillo — Portfolio">
+<meta property="og:description" content="Strategic & Interdisciplinary Designer — Guadalajara, MX. Branding, UX/UI, Industrial Design & Business Strategy.">
+<meta property="og:image" content="https://cchermosillo7-gif.github.io/PORTFOLIO-2/og-image.jpg">
+<meta property="og:url" content="https://cchermosillo7-gif.github.io/PORTFOLIO-2/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#0d0d0d;
+  --white:#f5f3ef;
+  --gray:#888;
+  --mid:#444;
+  --accent:#2563eb;
+  --border:rgba(0,0,0,0.1);
+  --fd:'Bebas Neue',sans-serif;
+  --fb:'DM Sans',sans-serif;
+  --fm:'DM Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--white);color:var(--black);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 3rem;background:var(--white);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--fm);font-size:.7rem;letter-spacing:.06em;color:var(--black);text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-family:var(--fm);font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;color:var(--gray);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--black)}
+
+/* HERO */
+.hero{min-height:100vh;padding:130px 3rem 5rem;display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:3rem;border-bottom:1px solid var(--border)}
+.hero-label{font-family:var(--fm);font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-bottom:1.25rem}
+.hero-name{font-family:var(--fd);font-size:clamp(4.5rem,10vw,10rem);line-height:.88;letter-spacing:-.01em}
+.hero-name .ac{color:var(--accent)}
+.hero-right{display:flex;flex-direction:column;justify-content:flex-end;gap:1.75rem;padding-bottom:.5rem}
+.hero-bio{font-size:.9rem;line-height:1.85;color:var(--mid);max-width:44ch}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.tag{font-family:var(--fm);font-size:.6rem;letter-spacing:.07em;text-transform:uppercase;border:1px solid var(--border);padding:.25rem .65rem;border-radius:2px;color:var(--gray)}
+.scroll-hint{font-family:var(--fm);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);display:flex;align-items:center;gap:.6rem}
+.scroll-hint::before{content:'';display:block;width:28px;height:1px;background:var(--gray)}
+
+/* SECTION */
+.sec{border-bottom:1px solid var(--border)}
+.sec-head{display:grid;grid-template-columns:100px 1fr;gap:2rem;padding:4rem 3rem 2rem;align-items:baseline}
+.sec-num{font-family:var(--fm);font-size:.6rem;color:var(--gray);letter-spacing:.08em;padding-top:.4rem}
+.sec-title{font-family:var(--fd);font-size:clamp(2.5rem,5vw,4.5rem);letter-spacing:.02em;line-height:.95}
+
+/* INDEX */
+.idx-rows{border-top:1px solid var(--border)}
+.idx-row{display:flex;align-items:center;gap:1.5rem;padding:1.05rem 3rem;border-bottom:1px solid var(--border);text-decoration:none;color:var(--black);transition:padding-left .25s,background .2s}
+.idx-row:hover{padding-left:4rem;background:rgba(0,0,0,0.025)}
+.idx-row:hover .arr{opacity:1}
+.idx-n{font-family:var(--fm);font-size:.58rem;color:var(--gray);min-width:1.5rem}
+.idx-name{font-family:var(--fd);font-size:1.5rem;letter-spacing:.02em;flex:1}
+.idx-cat{font-family:var(--fm);font-size:.58rem;text-transform:uppercase;letter-spacing:.08em;color:var(--gray)}
+.arr{color:var(--accent);opacity:0;transition:opacity .2s;font-size:.8rem;margin-left:.5rem}
+
+/* PROJECT */
+.proj{border-bottom:1px solid var(--border)}
+.proj-head{display:grid;grid-template-columns:100px 1fr auto;gap:2rem;padding:3rem 3rem 1.5rem;align-items:start}
+.proj-idx{font-family:var(--fm);font-size:.6rem;color:var(--gray);padding-top:.5rem;line-height:1.6}
+.proj-title{font-family:var(--fd);font-size:clamp(2rem,4.5vw,5rem);line-height:.9;letter-spacing:.02em}
+.proj-title .sub{display:block;font-size:clamp(1.1rem,2.2vw,2.2rem);color:var(--gray)}
+.badge{font-family:var(--fm);font-size:.6rem;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);padding:.26rem .68rem;border-radius:2px;white-space:nowrap;margin-top:.5rem;align-self:start}
+.proj-body{display:grid;grid-template-columns:100px 1fr 1fr;gap:2rem;padding:0 3rem 2rem}
+.desc{font-size:.875rem;line-height:1.85;color:var(--mid)}
+.meta{display:flex;flex-direction:column;gap:.85rem}
+.m-row{display:flex;flex-direction:column;gap:.18rem;padding-bottom:.85rem;border-bottom:1px solid var(--border)}
+.m-row:last-child{border-bottom:none;padding-bottom:0}
+.m-lbl{font-family:var(--fm);font-size:.57rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gray)}
+.m-val{font-size:.8rem;color:var(--black)}
+
+/* IMG GRID */
+.ig{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin:0 3rem 3rem}
+.ig2{grid-template-columns:repeat(2,1fr)}
+.ig4{grid-template-columns:repeat(4,1fr)}
+.cell{position:relative;overflow:hidden;background:#e8e5df}
+.cell img{width:100%;height:100%;object-fit:cover;display:block}
+.cell.r43{aspect-ratio:4/3}
+.cell.r34{aspect-ratio:3/4}
+.cell.r169{aspect-ratio:16/9}
+.cell.r217{aspect-ratio:21/7}
+.cell.span2{grid-column:span 2}
+.cell.spana{grid-column:1/-1}
+.cap{font-family:var(--fm);font-size:.56rem;letter-spacing:.07em;text-transform:uppercase;color:var(--gray);position:absolute;bottom:0;left:0;right:0;padding:.35rem .5rem;background:rgba(245,243,239,.82);text-align:center}
+
+/* PHASES */
+.phases{display:grid;grid-template-columns:100px 1fr;gap:2rem;padding:0 3rem 2.5rem}
+.ph-list{display:flex;flex-direction:column}
+.ph-item{display:flex;align-items:baseline;gap:1.5rem;padding:.85rem 0;border-bottom:1px solid var(--border)}
+.ph-item:last-child{border-bottom:none}
+.ph-n{font-family:var(--fm);font-size:.57rem;color:var(--gray);min-width:1.5rem}
+.ph-name{font-size:.875rem;font-weight:500;flex:1}
+.ph-note{font-family:var(--fm);font-size:.58rem;color:var(--gray);text-align:right}
+
+/* BAND */
+.band{background:var(--black);color:var(--white);padding:4rem 3rem;display:grid;grid-template-columns:100px 1fr;gap:2rem;border-bottom:1px solid var(--border)}
+.band-q{font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,3rem);line-height:1.05;letter-spacing:.02em;max-width:26ch}
+.band-q .em{color:var(--accent)}
+.band-sub{font-family:var(--fm);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:1.5rem}
+
+/* GMB */
+.gmb-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);margin:0 3rem 3rem}
+.gmb-cell{position:relative;overflow:hidden;aspect-ratio:16/9}
+.gmb-cell img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.gmb-cell:hover img{transform:scale(1.03)}
+.gmb-cell.wide{grid-column:1/-1;aspect-ratio:21/7}
+.gmb-ov{position:absolute;bottom:0;left:0;right:0;padding:.7rem 1rem;background:linear-gradient(transparent,rgba(0,0,0,.55));font-family:var(--fm);font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;color:#fff}
+
+/* SEO CONTEXT */
+.seo-ctx{display:grid;grid-template-columns:100px 1fr 1fr;gap:2rem;padding:0 3rem 2rem}
+
+/* EXPERIENCE */
+.exp-wrap{display:grid;grid-template-columns:100px 1fr 1fr;gap:2rem;padding:0 3rem 2.5rem}
+.exp-item{padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.exp-item:last-child{border-bottom:none;padding-bottom:0}
+.exp-role{font-size:.9rem;font-weight:500;margin-bottom:.2rem}
+.exp-org{font-family:var(--fm);font-size:.63rem;letter-spacing:.06em;color:var(--accent);margin-bottom:.15rem}
+.exp-date{font-family:var(--fm);font-size:.58rem;color:var(--gray);margin-bottom:.4rem}
+.exp-desc{font-size:.8rem;line-height:1.72;color:var(--mid)}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin:0 3rem 3rem}
+.sk-cell{padding:1.4rem;background:var(--white)}
+.sk-lbl{font-family:var(--fm);font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gray);margin-bottom:.7rem}
+.sk-items{display:flex;flex-direction:column;gap:.32rem}
+.sk-item{font-size:.8rem;color:var(--black)}
+
+/* CONTACT */
+.contact{background:var(--black);color:var(--white);display:grid;grid-template-columns:100px 1fr 1fr;gap:2rem;padding:6rem 3rem}
+.contact-big{font-family:var(--fd);font-size:clamp(3.5rem,8vw,8rem);line-height:.88;letter-spacing:.01em;color:var(--white)}
+.contact-links{display:flex;flex-direction:column;gap:1.5rem;justify-content:flex-end}
+.c-link{display:flex;flex-direction:column;gap:.18rem;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:1.2rem}
+.c-link:last-child{border-bottom:none;padding-bottom:0}
+.c-lbl{font-family:var(--fm);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.32)}
+.c-val{font-size:.875rem;color:var(--white);text-decoration:none;transition:color .2s}
+.c-val:hover{color:var(--accent)}
+footer{background:var(--black);border-top:1px solid rgba(255,255,255,.07);padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
+footer p{font-family:var(--fm);font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.22)}
+
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{gap:1rem}
+  .hero{grid-template-columns:1fr;padding:100px 1.5rem 3rem;gap:2rem}
+  .sec-head,.proj-head,.proj-body,.phases,.seo-ctx,.exp-wrap,.contact{grid-template-columns:1fr;padding-left:1.5rem;padding-right:1.5rem}
+  .proj-head{grid-template-columns:1fr}
+  .ig,.gmb-grid,.skills-grid{margin:0 1.5rem 2rem}
+  .ig{grid-template-columns:1fr}
+  .ig4{grid-template-columns:repeat(2,1fr)}
+  .cell.span2,.cell.spana{grid-column:1}
+  .gmb-grid{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:repeat(2,1fr)}
+  footer{flex-direction:column;gap:.5rem;padding:1.2rem 1.5rem;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Carolina Carrera H. © 2025</a>
+  <ul class="nav-links">
+    <li><a href="#branding">Branding</a></li>
+    <li><a href="#industrial">Industrial</a></li>
+    <li><a href="#seo">SEO</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <p class="hero-label">Strategic & Interdisciplinary Designer — Guadalajara, MX</p>
+    <h1 class="hero-name">Carolina<br><span class="ac">Carrera</span><br>Hermosillo</h1>
+  </div>
+  <div class="hero-right">
+    <p class="hero-bio">Strategic Designer specializing in product design, user-centered thinking, and business strategy. Strong background in market research, business analysis, and interdisciplinary collaboration. Skilled in translating user insights into strategic, data-informed design solutions across physical and digital contexts. Focused on creating high-impact solutions by bridging user needs, product design, and business strategy.</p>
+    <div class="tags">
+      <span class="tag">Brand Identity</span>
+      <span class="tag">Industrial Design</span>
+      <span class="tag">UI / UX</span>
+      <span class="tag">SEO & Digital</span>
+      <span class="tag">Photography</span>
+      <span class="tag">3D Modeling</span>
+      <span class="tag">Business Strategy</span>
+      <span class="tag">TOEFL iBT 100</span>
+    </div>
+    <p class="scroll-hint">Scroll to explore</p>
+  </div>
+</section>
+
+<!-- INDEX -->
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">00</span><h2 class="sec-title">Selected Works</h2></div>
+  <div class="idx-rows">
+    <a href="#vital" class="idx-row"><span class="idx-n">01</span><span class="idx-name">Vital — Brand Identity</span><span class="idx-cat">Branding</span><span class="arr">↗</span></a>
+    <a href="#ordinary" class="idx-row"><span class="idx-n">02</span><span class="idx-name">The Ordinary — Rebranding & Die-Cut</span><span class="idx-cat">Graphic Design</span><span class="arr">↗</span></a>
+    <a href="#arabesco" class="idx-row"><span class="idx-n">03</span><span class="idx-name">Arabesco Jewelry — Brand System</span><span class="idx-cat">Branding</span><span class="arr">↗</span></a>
+    <a href="#toro" class="idx-row"><span class="idx-n">04</span><span class="idx-name">De Sangre y Oro — Book Cover</span><span class="idx-cat">Editorial</span><span class="arr">↗</span></a>
+    <a href="#neeu" class="idx-row"><span class="idx-n">05</span><span class="idx-name">NEEU Design Studio — UI / Wireframing</span><span class="idx-cat">UI Design</span><span class="arr">↗</span></a>
+    <a href="#safetransfer" class="idx-row"><span class="idx-n">06</span><span class="idx-name">Safe Transfer Hub — Guadalajara</span><span class="idx-cat">Industrial</span><span class="arr">↗</span></a>
+    <a href="#aston" class="idx-row"><span class="idx-n">07</span><span class="idx-name">Aston Martin Headphones</span><span class="idx-cat">Industrial</span><span class="arr">↗</span></a>
+    <a href="#knives" class="idx-row"><span class="idx-n">08</span><span class="idx-name">Japanese Knives — Santoku · Dunka · Petty</span><span class="idx-cat">Industrial</span><span class="arr">↗</span></a>
+    <a href="#perfume" class="idx-row"><span class="idx-n">09</span><span class="idx-name">Sagitarius Perfume — Antares</span><span class="idx-cat">Industrial</span><span class="arr">↗</span></a>
+    <a href="#seo" class="idx-row"><span class="idx-n">10</span><span class="idx-name">GMB SEO — Legal Firms</span><span class="idx-cat">Digital Marketing</span><span class="arr">↗</span></a>
+    <a href="#photo" class="idx-row"><span class="idx-n">11</span><span class="idx-name">Photography — Studio & Outdoor</span><span class="idx-cat">Other Works</span><span class="arr">↗</span></a>
+    <a href="#jewelry" class="idx-row"><span class="idx-n">12</span><span class="idx-name">Handcrafted Jewelry — CEDIJ</span><span class="idx-cat">Other Works</span><span class="arr">↗</span></a>
+  </div>
+</section>
+
+<!-- ═══ BRANDING ═══ -->
+<section id="branding" class="sec">
+  <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">Branding &<br>Graphic Design</h2></div>
+</section>
+
+<!-- VITAL -->
+<div id="vital" class="proj">
+  <div class="proj-head">
+    <span class="proj-idx">01 / Branding</span>
+    <h2 class="proj-title">Vital<span class="sub">Manual de Identidad Visual</span></h2>
+    <span class="badge">Brand Identity</span>
+  </div>
+  <div class="proj-body">
+    <div></div>
+    <p class="desc">Complete visual identity system for Vital Healthy Bar — a women's health brand designed around menstrual cycle nutrition. The system includes logo, color palette, typography, grid specifications (22× / 17.5×), brand manual, and product mockups across packaging applications. Executed as a freelance project with full market research and customer profiling.</p>
+    <div class="meta">
+      <div class="m-row"><span class="m-lbl">Deliverable</span><span class="m-val">Brand Manual · Color System · Typography · Mockups</span></div>
+      <div class="m-row"><span class="m-lbl">Colors</span><span class="m-val">Azul #3B89A0 · Amarillo #ECDB97 · Gris #737373</span></div>
+      <div class="m-row"><span class="m-lbl">Typography</span><span class="m-val">Bebas Neue Bold — Display headers</span></div>
+      <div class="m-row"><span class="m-lbl">Tagline</span><span class="m-val">Your cycle. Your power.</span></div>
+    </div>
+  </div>
+  <div class="ig" style="grid-template-columns:1fr 1fr 1fr;">
+    <div class="cell r43"><img src="images/img-01.jpg" alt="Vital logo"><div class="cap">Logo — Brand Colors</div></div>
+    <div class="cell r43"><img src="images/img-02.jpg" alt="Vital grid"><div class="cap">Grid System — 22× / 17.5×</div></div>
+    <div class="cell r43"><img src="images/img-03.jpg" alt="Vital colors"><div class="cap">Color Palette</div></div>
+    <div class="cell r43"><img src="images/img-04.jpg" alt="Vital typography"><div class="cap">Typography — Bebas Neue</div></div>
+    <div class="cell r43"><img src="images/img-05.jpg" alt="Vital mockups"><div class="cap">Product Mockups</div></div>
+    <div class="cell r43"><img src="images/img-06.jpg" alt="Vital tagline"><div class="cap">Your cycle. Your power.</div></div>
+  </div>
+  <div class="ig" style="grid-template-columns:1fr;margin-top:-1px;">
+    <div class="cell" style="aspect-ratio:21/8;"><img src="images/img-07.jpg" alt="Vital product shots"><div class="cap">Product Shots — 4 Menstrual Phases</div></div>
+  </div>
+</div>
+
+<!-- THE ORDINARY -->
+<div id="ordinary" class="proj">
+  <div class="proj-head">
+    <span class="proj-idx">02 / Rebranding · Die-Cut</span>
+    <h2 class="proj-title">The Ordinary<span class="sub">Rebranding & Packaging</span></h2>
+    <span class="badge">Die-Cut · Editorial</span>
+  </div>
+  <div class="proj-body">
+    <div></div>
+    <p class="desc">Rebranding exercise for The Ordinary, reimagined as ORDI NARY. — preserving the brand's clinical directness while elevating the aesthetic through die-cut formats. Includes business cards, product label redesigns for 4 SKUs (Hyaluronic Acid, Niacinamide, Caffeine Eye Serum, AHA/BHA Peeling), and a digital UX wireframing phase for the self-checkout experience.</p>
+    <div class="meta">
+      <div class="m-row"><span class="m-lbl">Type</span><span class="m-val">Rebranding · Packaging · Die-Cut · UX Wireframing</span></div>
+      <div class="m-row"><span class="m-lbl">Products</span><span class="m-val">4 SKUs redesigned</span></div>
+      <div class="m-row"><span class="m-lbl">UX</span><span class="m-val">Zara self-checkout wireframe — 6 screens</span></div>
+    </div>
+  </div>
+  <div class="ig" style="grid-template-columns:1fr 1fr;">
+    <div class="cell r169"><img src="images/img-08.jpg" alt="The Ordinary die-cut"><div class="cap">Rebranding & Die-Cut Cards</div></div>
+    <div class="cell r169"><img src="images/img-09.jpg" alt="The Ordinary packaging"><div class="cap">Packaging — Skincare Die-Cuts</div></div>
+    <div class="cell spana r169"><img src="images/img-10.jpg" alt="Wireframing"><div class="cap">UX Wireframing — Self-Checkout Flow</div></div>
+  </div>
+</div>
+
+<!-- ARABESCO -->
+<div id="arabesco" class="proj">
+  <div class="proj-head">
+    <span class="proj-idx">03 / Brand System</span>
+    <h2 class="proj-title">Arabesco<span class="sub">Jewelry Studio</span></h2>
+    <span class="badge">Branding · Identity</span>
+  </div>
+  <div class="proj-body">
+    <div></div>
+    <p class="desc">Complete brand identity for Arabesco — a handcrafted silver jewelry studio inspired by ancient forms, ornament, and enduring detail. Each piece created as an object of memory, timeless and meaningful. System includes logo, business cards in three colorways (cream, sage textured, charcoal), letterhead, and packaging mockups (shopping bag + gift box). Est. 2026. Hecho en México.</p>
+    <div class="meta">
+      <div class="m-row"><span class="m-lbl">Palette</span><span class="m-val">#A7B2A4 Sage · #FFFBF4 Cream · #4F4946 Charcoal</span></div>
+      <div class="m-row"><span class="m-lbl">Typography</span><span class="m-val">Trajan Pro 3 · Noh Regular · Nocturne Serif ExtraLight</span></div>
+      <div class="m-row"><span class="m-lbl">Deliverables</span><span class="m-val">Logo · Business Cards × 3 · Letterhead · Packaging</span></div>
+      <div class="m-row"><span class="m-lbl">Contact</span><span class="m-val">arabescojewelry.com · @arabesco.jewerly</span></div>
+    </div>
+  </div>
+  <div class="ig ig2">
+    <div class="cell r169"><img src="images/img-11.png" alt="Arabesco logo sage"><div class="cap">Logo — Sage Colorway</div></div>
+    <div class="cell r169"><img src="images/img-12.png" alt="Arabesco letterhead"><div class="cap">Letterhead System — 2 Colorways</div></div>
+    <div class="cell r169"><img src="images/img-13.png" alt="Arabesco business cards"><div class="cap">Business Cards — Sage & Cream Colorways</div></div>
+    <div class="cell r169"><img src="images/img-14.png" alt="Arabesco packaging"><div class="cap">Packaging — Shopping Bag + Gift Box</div></div>
+  </div>
+</div>
+</div>
+
+<!-- TORO -->
+<div id="toro" class="proj">
+  <div class="proj-head">
+    <span class="proj-idx">04 / Editorial Design</span>
+    <h2 class="proj-title">De Sangre y Oro<span class="sub">Book Cover Design</span></h2>
+    <span class="badge">Editorial · Print</span>
+  </div>
+  <div class="proj-body">
+    <div></div>
+    <p class="desc">Book cover design for "De Sangre y Oro" by Francisco Xavier Villalobos. A dramatic editorial composition built on a high-contrast palette of crimson, black, and white. A detailed ink illustration of a charging bull anchors the composition against bold brushstroke strokes, framed by classic Trajan-style serif typography. The author monogram FV adds a personal seal of authorship.</p>
+    <div class="meta">
+      <div class="m-row"><span class="m-lbl">Client</span><span class="m-val">Francisco Xavier Villalobos</span></div>
+      <div class="m-row"><span class="m-lbl">Type</span><span class="m-val">Book Cover · Editorial Print</span></div>
+      <div class="m-row"><span class="m-lbl">Palette</span><span class="m-val">Crimson · Ink Black · White</span></div>
+      <div class="m-row"><span class="m-lbl">Style</span><span class="m-val">Ink illustration · Classic serif · Monogram seal</span></div>
+    </div>
+  </div>
+  <div class="ig" style="grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto;">
+    <div class="cell r34"><img src="images/img-15.jpg" alt="De Sangre y Oro"><div class="cap">Book Cover — De Sangre y Oro</div></div>
+  </div>
+</div>
+
+<!-- NEEU -->
+<div id="neeu" class="proj">
+  <div class="proj-head">
+    <span class="proj-idx">05 / UI · Wireframing</span>
+    <h2 class="proj-title">NEEU<span class="sub">Design Studio — App UI</span></h2>
+    <span class="badge">UI Design · Wireframing</span>
+  </div>
+  <div class="proj-body">
+    <div></div>
+    <p class="desc">Personal entrepreneurship project — NEEU is a strategic AI-powered design studio concept created to formalize SMEs in Jalisco with 3–8 years of operation. The project includes full brand identity, service structure, pricing model, and a mobile app UI design. Service tiers: Audit IA Express ($18K MXN), Marca Automatizada ($45K MXN), and Eficiencia Total Retail ($75K MXN). Evolution path: Diagnóstico IA → Diseño integral → Escalabilidad financiada.</p>
+    <div class="meta">
+      <div class="m-row"><span class="m-lbl">Type</span><span class="m-val">Personal Project — Brand + Business Model + UI Design</span></div>
+      <div class="m-row"><span class="m-lbl">Plans</span><span class="m-val">$18K · $45K · $75K MXN — 30% margin each</span></div>
+      <div class="m-row"><span class="m-lbl">Target</span><span class="m-val">PyMEs Jalisco — 3–8 years of operation</span></div>
+      <div class="m-row"><span class="m-lbl">Impact</span><span class="m-val">+25% efficiency · +15% conversion · +20% sales UX</span></div>
+    </div>
+  </div>
+  <div class="ig" style="grid-template-columns:1fr;margin-bottom:3rem;">
+    <div class="cell" style="aspect-ratio:3/4;"><img src="images/img-16.jpg" alt="NEEU Design Studio poster" style="object-fit:contain;background:#f5f5f5;"><div class="cap">NEEU Design Studio — Poster completo · Pricing · App UI</div></div>
+  </div>
+</div>
+
+<!-- BAND -->
+<div class="band">
+  <div></div>
+  <div>
+    <p class="band-q">Industrial Design — <span class="em">where strategy meets physical form.</span></p>
+    <p class="band-sub">SolidWorks · KeyShot · Substance Stager · Oculus AR · Vizcom AI</p>
+  </div>
+</div>
+
+<!-- ═══ INDUSTRIAL ═══ -->
+<section id="industrial" class="sec">
+  <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">Industrial<br>Design</h2></div>
+</section>
+
+<!-- SAFE TRANSFER HUB -->
+<div id="safetransfer" class="proj">
+  <div class="proj-head">
+    <span class="proj-idx">06 / Industrial Design</span>
+    <h2 class="proj-title">Safe Transfer Hub<span class="sub">Public Transport · Guadalajara</span></h2>
+    <span class="badge">Urban · Industrial</span>
+  </div>
+  <div class="proj-body">
+    <div></div>
+    <p class="desc">Team project addressing insecurity at bus stops in the Metropolitan Area of Guadalajara. The solution integrates solar-powered LED lighting, open-visibility structure to eliminate blind spots, panic buttons, and accessible seating with protective roofing. Process: problem research → hand-drawn sketching → SolidWorks 3D modeling → Oculus AR presentation → KeyShot rendering.</p>
+    <div class="meta">
+      <div class="m-row"><span class="m-lbl">Tools</span><span class="m-val">SolidWorks · KeyShot · Oculus AR</span></div>
+      <div class="m-row"><span class="m-lbl">Context</span><span class="m-val">Diseño Estratégico V — ITESO Guadalajara</span></div>
+      <div class="m-row"><span class="m-lbl">Objective</span><span class="m-val">Improve safety perception · Encourage public transport use</span></div>
+    </div>
+  </div>
+  <div class="phases">
+    <div></div>
+    <div class="ph-list">
+      <div class="ph-item"><span class="ph-n">01</span><span class="ph-name">Smart Lighting</span><span class="ph-note">Solar LED + USB charging</span></div>
+      <div class="ph-item"><span class="ph-n">02</span><span class="ph-name">Open Visibility Design</span><span class="ph-note">No blind spots · Natural surveillance</span></div>
+      <div class="ph-item"><span class="ph-n">03</span><span class="ph-name">Safety Technology</span><span class="ph-note">Panic buttons for emergencies</span></div>
+      <div class="ph-item"><span class="ph-n">04</span><span class="ph-name">Accessibility & Comfort</span><span class="ph-note">Universal design · Durable seating</span></div>
+      <div class="ph-item"><span class="ph-n">05</span><span class="ph-name">AR Presentation</span><span class="ph-note">Oculus immersive walkthrough</span></div>
+    </div>
+  </div>
+  <div class="ig">
+    <div class="cell r43"><img src="images/img-17.jpg" alt="Safe Transfer sketches"><div class="cap">Creative Stage — Sketching</div></div>
+    <div class="cell r43"><img src="images/img-18.jpg" alt="Safe Transfer technical drawings"><div class="cap">Technical Drawings — SolidWorks</div></div>
+    <div class="cell r43"><img src="images/img-19.jpg" alt="Safe Transfer render"><div class="cap">Rendering — Solar LED · Panic Button · Structure</div></div>
+  </div>
+</div>
+
+<!-- ASTON MARTIN -->
+<div id="aston" class="proj">
+  <div class="proj-head">
+    <span class="proj-idx">07 / Industrial Design</span>
+    <h2 class="proj-title">Aston Martin<span class="sub">Headphones</span></h2>
+    <span class="badge">Luxury Product</span>
+  </div>
+  <div class="proj-body">
+    <div></div>
+    <p class="desc">Exclusive headphones embodying Aston Martin's sophistication — inspired by the DB5 from Goldfinger. Concept: an auditory sanctuary that shields from overwhelming external noise. Designed for professionals aged 30–55 who value exclusivity and discreet luxury. Process included AI-assisted ideation via Vizcom, SolidWorks modeling, Substance Stager rendering, and full physical prototyping.</p>
+    <div class="meta">
+      <div class="m-row"><span class="m-lbl">Tools</span><span class="m-val">SolidWorks · Substance Stager · Vizcom AI</span></div>
+      <div class="m-row"><span class="m-lbl">Target User</span><span class="m-val">30–55 · Professionals & Automotive Enthusiasts</span></div>
+      <div class="m-row"><span class="m-lbl">Concept</span><span class="m-val">Auditory Sanctuary · Discreet Luxury</span></div>
+      <div class="m-row"><span class="m-lbl">Reference</span><span class="m-val">Aston Martin DB5 · British craftsmanship since 1913</span></div>
+    </div>
+  </div>
+  <div class="ig ig2">
+    <div class="cell r169"><img src="images/img-20.jpg" alt="Aston Martin intro"><div class="cap">Brand Introduction — Aston Martin Valour</div></div>
+    <div class="cell r169"><img src="images/img-21.jpg" alt="Aston Martin user persona & sketches"><div class="cap">User Persona & Concept Sketching</div></div>
+    <div class="cell r169"><img src="images/img-22.jpg" alt="Aston Martin brand research"><div class="cap">Brand Research & Concept Development</div></div>
+    <div class="cell r169"><img src="images/img-23.jpg" alt="Aston Martin SolidWorks"><div class="cap">3D Modeling — SolidWorks Technical Drawings</div></div>
+  </div>
+  <div class="ig ig2" style="margin-top:-1px;">
+    <div class="cell r169"><img src="images/img-24.jpg" alt="Aston Martin render"><div class="cap">Rendering — Substance Stager · Final Design</div></div>
+    <div class="cell r169"><img src="images/img-25.jpg" alt="Aston Martin prototype"><div class="cap">Physical Prototype — AUSJAL Presentation</div></div>
+  </div>
+</div>
+
+<!-- JAPANESE KNIVES -->
+<div id="knives" class="proj">
+  <div class="proj-head">
+    <span class="proj-idx">08 / Industrial Design</span>
+    <h2 class="proj-title">Japanese Knives<span class="sub">Santoku · Dunka · Petty</span></h2>
+    <span class="badge">Product Design</span>
+  </div>
+  <div class="proj-body">
+    <div></div>
+    <p class="desc">Set of three affordable Japanese stainless steel knives for cooking enthusiasts with intermediate to advanced skills. Research included a direct factory visit in Sayula, Jalisco — gathering insights on rivets, blade thickness, and handle materials. Santoku 三徳 for slicing and chopping; Dunka ダンカ for heavy tasks; Petty ペティ for precision work. All 両刃 double edge.</p>
+    <div class="meta">
+      <div class="m-row"><span class="m-lbl">Collection</span><span class="m-val">Santoku 三徳 · Dunka ダンカ · Petty ペティ</span></div>
+      <div class="m-row"><span class="m-lbl">Field Research</span><span class="m-val">Factory visit — Sayula, Jalisco</span></div>
+      <div class="m-row"><span class="m-lbl">Tools</span><span class="m-val">SolidWorks · KeyShot</span></div>
+      <div class="m-row"><span class="m-lbl">Edge</span><span class="m-val">両刃 Double Edge — all three models</span></div>
+    </div>
+  </div>
+  <div class="ig ig2">
+    <div class="cell r169"><img src="images/img-26.jpg" alt="Japanese knives technical drawings"><div class="cap">Technical Drawings — All 3 Models</div></div>
+    <div class="cell r169"><img src="images/img-27.jpg" alt="Japanese knives render scene"><div class="cap">Rendering — KeyShot Scene</div></div>
+    <div class="cell spana" style="aspect-ratio:21/8;"><img src="images/img-28.jpg" alt="Japanese knives prototype"><div class="cap">Physical Prototype — Final Presentation</div></div>
+  </div>
+</div>
+
+<!-- SAGITARIUS PERFUME -->
+<div id="perfume" class="proj">
+  <div class="proj-head">
+    <span class="proj-idx">09 / Industrial Design</span>
+    <h2 class="proj-title">Sagitarius<span class="sub">Antares Perfume</span></h2>
+    <span class="badge">Product Design</span>
+  </div>
+  <div class="proj-body">
+    <div></div>
+    <p class="desc">Perfume bottle inspired by the bold, adventurous spirit of Sagittarius — a fire sign, like the flame of a candle in darkness, lighting the path to wisdom. Scent: damp autumnal atmosphere with woody essence, jasmine, and hints of vanilla. Bottle designed in SolidWorks with Vidrio Super Flint body and Plexiglass cap. Fabricated via laser cutting and transparent casting.</p>
+    <div class="meta">
+      <div class="m-row"><span class="m-lbl">Scent Profile</span><span class="m-val">Woody · Jasmine · Vanilla — Autumn Damp</span></div>
+      <div class="m-row"><span class="m-lbl">Material</span><span class="m-val">Vidrio Super Flint · Plexiglass cap</span></div>
+      <div class="m-row"><span class="m-lbl">Tools</span><span class="m-val">SolidWorks · KeyShot · Laser Cut · Casting</span></div>
+      <div class="m-row"><span class="m-lbl">Scale</span><span class="m-val">Technical drawings 1:1 · Isometric views</span></div>
+    </div>
+  </div>
+  <div class="ig">
+    <div class="cell r43"><img src="images/img-29.jpg" alt="Perfume modeling"><div class="cap">Modeling — SolidWorks Technical Drawings</div></div>
+    <div class="cell span2 r43"><img src="images/img-30.jpg" alt="Perfume render"><div class="cap">Rendering — Antares · Autumn Leaves Scene</div></div>
+    <div class="cell spana" style="aspect-ratio:21/7;"><img src="images/img-31.jpg" alt="Perfume prototyping process"><div class="cap">Process — Laser Cutting · Transparent Casting · Final Prototype</div></div>
+  </div>
+</div>
+
+<!-- BAND 2 -->
+<div class="band">
+  <div></div>
+  <div>
+    <p class="band-q">SEO & Digital — <span class="em">design that ranks, converts, and grows.</span></p>
+    <p class="band-sub">Google Business Profile · Geo-Targeting · Keyword Intent · Local SEO</p>
+  </div>
+</div>
+
+<!-- ═══ SEO ═══ -->
+<section id="seo" class="sec">
+  <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">SEO &<br>Digital Marketing</h2></div>
+  <div class="seo-ctx">
+    <div></div>
+    <p class="desc">Google Business Profile content creation and optimization for multi-location law firms across the United States. Produced during SEO Design Internship at LawRank Marketing — applying keyword intent, geo-targeting analysis, and UX-aligned messaging to increase local search visibility in competitive legal markets.</p>
+    <div class="meta">
+      <div class="m-row"><span class="m-lbl">Role</span><span class="m-val">SEO Design Intern — LawRank Marketing</span></div>
+      <div class="m-row"><span class="m-lbl">Scope</span><span class="m-val">GMB covers · Local SEO · Geo-targeting · Keyword intent</span></div>
+      <div class="m-row"><span class="m-lbl">Markets</span><span class="m-val">Boise ID · Chicago IL · Louisville KY · New York NY</span></div>
+      <div class="m-row"><span class="m-lbl">Since</span><span class="m-val">January 2026 — Present</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="gmb-grid">
+  <div class="gmb-cell"><img src="images/img-32.jpg" alt="Feller Wendt Boise"><div class="gmb-ov">Feller | Wendt LLC · Boise, ID — Personal Injury</div></div>
+  <div class="gmb-cell"><img src="images/img-33.jpg" alt="Zayed Chicago Lakefront"><div class="gmb-ov">Zayed Law Offices · Chicago, IL — Lakefront Ice Hazards</div></div>
+  <div class="gmb-cell"><img src="images/img-34.png" alt="HJV Louisville"><div class="gmb-ov">HJV · Louisville, KY — Car Accident Lawyers</div></div>
+  <div class="gmb-cell"><img src="images/img-35.jpg" alt="Zayed Chicago Fire FC"><div class="gmb-ov">Zayed Law Offices · Chicago, IL — Chicago Fire FC Partner</div></div>
+  <div class="gmb-cell wide"><img src="images/img-36.jpg" alt="Rosenbaum NYC"><div class="gmb-ov">Rosenbaum Personal Injury Lawyers · Manhattan, New York</div></div>
+</div>
+
+<!-- ═══ PHOTOGRAPHY ═══ -->
+<section id="photo" class="sec">
+  <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">Photography</h2></div>
+  <div class="ig ig4" style="margin:0 3rem 3rem;">
+    <div class="cell r34"><img src="images/img-37.jpg" alt="Studio photography"><div class="cap">Studio — B&W</div></div>
+    <div class="cell r34"><img src="images/img-38.jpg" alt="Studio photography 2"><div class="cap">Studio — Portrait</div></div>
+    <div class="cell r34"><img src="images/img-39.jpg" alt="Outdoor photography"><div class="cap">Outdoor — Fashion</div></div>
+    <div class="cell r34"><img src="images/img-40.jpg" alt="Outdoor photography 2"><div class="cap">Outdoor — Editorial</div></div>
+  </div>
+</section>
+
+<!-- ═══ JEWELRY ═══ -->
+<section id="jewelry" class="sec">
+  <div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">Handcrafted<br>Jewelry</h2></div>
+  <div class="proj-body">
+    <div></div>
+    <p class="desc">Two years honing craft at CEDIJ — Centro de Diseño de Joyería de Jalisco — plus a course in wax modeling for casting techniques. Passion sparked in the artisan and jewelry markets of Pátzcuaro, drawn to ornate, vintage designs that carry the story behind each piece. Techniques: wax carving, silver casting, soldering, and metalwork.</p>
+    <div class="meta">
+      <div class="m-row"><span class="m-lbl">Training</span><span class="m-val">CEDIJ · 2 courses + Wax Modeling for Casting</span></div>
+      <div class="m-row"><span class="m-lbl">Techniques</span><span class="m-val">Wax carving · Silver casting · Soldering · Metalwork</span></div>
+      <div class="m-row"><span class="m-lbl">Inspiration</span><span class="m-val">Artisan markets of Pátzcuaro · Ornate vintage design</span></div>
+    </div>
+  </div>
+  <div class="ig ig2">
+    <div class="cell r169"><img src="images/img-41.png" alt="Signet ring MB engraved"><div class="cap">Signet Ring — MB Engraved · Gold Finish</div></div>
+    <div class="cell r169"><img src="images/img-42.jpg" alt="Jewelry making process"><div class="cap">Process — Wax Carving · Casting · Metalwork · Final Pieces</div></div>
+  </div>
+</section>
+
+<!-- ═══ EXPERIENCE ═══ -->
+<section id="experience" class="sec">
+  <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">Experience<br>& Skills</h2></div>
+
+  <div style="display:grid;grid-template-columns:100px 1fr 1fr;gap:2rem;padding:0 3rem 2rem;">
+    <div></div>
+    <div>
+      <p class="m-lbl" style="margin-bottom:.75rem;">Education</p>
+      <div class="exp-item">
+        <div class="exp-role">Bachelor's in Integral Design</div>
+        <div class="exp-org">ITESO — Instituto Tecnológico y de Estudios Superiores de Occidente</div>
+        <div class="exp-date">Aug 2021 – July 2026 · Guadalajara, Mexico</div>
+      </div>
+      <div class="exp-item" style="margin-top:1.25rem;">
+        <div class="exp-role">Exchange Program</div>
+        <div class="exp-org">University of San Diego</div>
+        <div class="exp-date">Feb 2025 – May 2025 · San Diego, CA</div>
+        <div class="exp-desc">Marketing · Emerging Trends in Entrepreneurship · Investor pitch presentations</div>
+      </div>
+    </div>
+    <div>
+      <p class="m-lbl" style="margin-bottom:.75rem;">Languages</p>
+      <div class="exp-item">
+        <div class="exp-role">English — Advanced</div>
+        <div class="exp-org">TOEFL iBT 100</div>
+      </div>
+      <div class="exp-item" style="margin-top:1.25rem;">
+        <div class="exp-role">Spanish — Native</div>
+        <div class="exp-org">Guadalajara, Jalisco, México</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="exp-wrap">
+    <div><p class="m-lbl">Experience</p></div>
+    <div>
+      <div class="exp-item">
+        <div class="exp-role">SEO Design Intern</div>
+        <div class="exp-org">LawRank Marketing</div>
+        <div class="exp-date">January 2026 – Present</div>
+        <div class="exp-desc">Optimized Google Business Profile content for multi-location law firms, increasing local search visibility. Applied keyword intent and geo-targeting analysis aligned with UX, conversion goals, and revenue-focused acquisition.</div>
+      </div>
+      <div class="exp-item" style="margin-top:1.5rem;">
+        <div class="exp-role">Consulting for SMEs</div>
+        <div class="exp-org">Centro Universidad Empresa – ITESO</div>
+        <div class="exp-date">August 2025 – Present</div>
+        <div class="exp-desc">Managed consulting for an SME using data-driven strategies to improve team productivity. Developed a quality and packaging manual (URREA Herramientas) to reduce errors and optimize internal processes.</div>
+      </div>
+    </div>
+    <div>
+      <div class="exp-item">
+        <div class="exp-role">VITAL Healthy Bar — Freelance</div>
+        <div class="exp-org">Brand Identity & Strategy</div>
+        <div class="exp-date">September 2025</div>
+        <div class="exp-desc">Executed rebranding through market research and customer profiling, strengthening brand positioning and improving customer satisfaction and market fit. Refined value proposition and business model.</div>
+      </div>
+      <div class="exp-item" style="margin-top:1.5rem;">
+        <div class="exp-role">Entrepreneurship & Innovation</div>
+        <div class="exp-org">City of Moreton Bay</div>
+        <div class="exp-date">February 2025</div>
+        <div class="exp-desc">Led design and communication strategies to accelerate idea validation. Integrated UX, business modeling, and storytelling to deliver persuasive investor pitch presentations. Increased investment readiness through high-impact visuals.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="skills-grid">
+    <div class="sk-cell">
+      <p class="sk-lbl">Design Tools</p>
+      <div class="sk-items">
+        <span class="sk-item">Illustrator</span><span class="sk-item">Photoshop</span><span class="sk-item">Lightroom</span><span class="sk-item">InDesign</span><span class="sk-item">Figma</span>
+      </div>
+    </div>
+    <div class="sk-cell">
+      <p class="sk-lbl">Industrial & 3D</p>
+      <div class="sk-items">
+        <span class="sk-item">SolidWorks</span><span class="sk-item">KeyShot</span><span class="sk-item">Substance Stager</span><span class="sk-item">Vizcom AI</span><span class="sk-item">Oculus AR</span>
+      </div>
+    </div>
+    <div class="sk-cell">
+      <p class="sk-lbl">UX & Strategy</p>
+      <div class="sk-items">
+        <span class="sk-item">User Research</span><span class="sk-item">Prototyping</span><span class="sk-item">Design Thinking</span><span class="sk-item">Business Modeling</span><span class="sk-item">Value Proposition</span>
+      </div>
+    </div>
+    <div class="sk-cell">
+      <p class="sk-lbl">Business & Digital</p>
+      <div class="sk-items">
+        <span class="sk-item">Market Research</span><span class="sk-item">Strategic Analysis</span><span class="sk-item">SEO · Geo-Targeting</span><span class="sk-item">Data Analysis</span><span class="sk-item">Problem Framing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact">
+    <div></div>
+    <div>
+      <p style="font-family:var(--fm);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:1rem;">Let's work together</p>
+      <p class="contact-big">Get in<br><span style="color:var(--accent);">Touch</span></p>
+    </div>
+    <div class="contact-links">
+      <div class="c-link"><span class="c-lbl">Email</span><a href="/cdn-cgi/l/email-protection#a8cbcbc0cddac5c7dbc1c4c4c79fe8cfc5c9c1c486cbc7c5" class="c-val"><span class="__cf_email__" data-cfemail="9efdfdf6fbecf3f1edf7f2f2f1a9def9f3fff7f2b0fdf1f3">[email&#160;protected]</span></a></div>
+      <div class="c-link"><span class="c-lbl">Phone</span><a href="tel:+523321365391" class="c-val">+52 (33) 21 36 53 91</a></div>
+      <div class="c-link"><span class="c-lbl">LinkedIn</span><a href="https://www.linkedin.com/in/carolinacarrerahermosillo/" target="_blank" class="c-val">carolinacarrerahermosillo</a></div>
+      <div class="c-link"><span class="c-lbl">Location</span><span class="c-val" style="cursor:default;">Guadalajara, Jalisco · México</span></div>
+    </div>
+  </div>
+  <footer>
+    <p>Carolina Carrera H
