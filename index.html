@@ -83,6 +83,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .ig4{grid-template-columns:repeat(4,1fr)}
 .cell{position:relative;overflow:hidden;background:#e8e5df}
 .cell img{width:100%;height:100%;object-fit:cover;display:block}
+.cell video{width:100%;height:100%;object-fit:contain;display:block;background:#000}
+.vid{width:min(calc(100% - 6rem),420px);margin:0 auto 3rem}
 .cell.r43{aspect-ratio:4/3}
 .cell.r34{aspect-ratio:3/4}
 .cell.r169{aspect-ratio:16/9}
@@ -145,17 +147,44 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 footer{background:var(--black);border-top:1px solid rgba(255,255,255,.07);padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center}
 footer p{font-family:var(--fm);font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.22)}
 
+/* PROTOTYPE EMBED */
+.proto{margin:0 3rem 3rem;border:1px solid var(--border);background:#e8e5df}
+.proto-bar{display:flex;justify-content:space-between;align-items:center;padding:.7rem 1rem;background:var(--white);border-bottom:1px solid var(--border)}
+.proto-lbl,.proto-open{font-family:var(--fm);font-size:.58rem;letter-spacing:.09em;text-transform:uppercase}
+.proto-lbl{color:var(--gray)}
+.proto-open{color:var(--accent);text-decoration:none;transition:opacity .2s}
+.proto-open:hover{opacity:.65}
+.proto-stage{position:relative;height:min(80vh,780px);min-height:520px;background:var(--white)}
+.proto-load{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;text-align:center;font-family:var(--fm);font-size:.6rem;letter-spacing:.09em;text-transform:uppercase;color:var(--gray);line-height:1.8}
+.proto-load a{color:var(--accent);text-decoration:none}
+.proto-frame{position:absolute;inset:0;width:100%;height:100%;border:0;background:var(--white);opacity:0;transition:opacity .6s ease}
+.proto-frame.on{opacity:1}
+
+/* ADS */
+.ads{display:grid;grid-template-columns:47.253fr 52.747fr;gap:1px;background:var(--border);margin:0 3rem 3rem;align-items:start}
+.ads-col{display:flex;flex-direction:column;gap:1px;min-width:0}
+.cell.r11{aspect-ratio:1/1}
+.cell.r916{aspect-ratio:9/16}
+
 @media(max-width:768px){
-  nav{padding:1rem 1.5rem}
-  .nav-links{gap:1rem}
+  nav{padding:.8rem 1.5rem .6rem;flex-wrap:wrap;row-gap:.5rem}
+  .nav-logo{white-space:nowrap}
+  .nav-links{gap:1.1rem;width:100%;overflow-x:auto;scrollbar-width:none;padding-bottom:.25rem}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links li{flex:none}
   .hero{grid-template-columns:1fr;padding:100px 1.5rem 3rem;gap:2rem}
   .sec-head,.proj-head,.proj-body,.phases,.seo-ctx,.exp-wrap,.contact{grid-template-columns:1fr;padding-left:1.5rem;padding-right:1.5rem}
   .proj-head{grid-template-columns:1fr}
-  .ig,.gmb-grid,.skills-grid{margin:0 1.5rem 2rem}
+  .ig,.gmb-grid,.skills-grid,.proto{margin:0 1.5rem 2rem}
+  .proto-stage{height:72vh;min-height:480px}
   .ig{grid-template-columns:1fr}
   .ig4{grid-template-columns:repeat(2,1fr)}
   .cell.span2,.cell.spana{grid-column:1}
   .gmb-grid{grid-template-columns:1fr}
+  .ads{display:flex;flex-direction:column;margin:0 1.5rem 2rem}
+  .ads-col{display:contents}
+  .ads .cell{order:var(--o)}
+  .vid{width:calc(100% - 3rem);margin:0 auto 2rem}
   .skills-grid{grid-template-columns:repeat(2,1fr)}
   footer{flex-direction:column;gap:.5rem;padding:1.2rem 1.5rem;text-align:center}
 }
@@ -167,7 +196,10 @@ footer p{font-family:var(--fm);font-size:.56rem;letter-spacing:.08em;text-transf
   <a href="#" class="nav-logo">Carolina Carrera H. © 2025</a>
   <ul class="nav-links">
     <li><a href="#branding">Branding</a></li>
+    <li><a href="#uxui">UX/UI</a></li>
     <li><a href="#industrial">Industrial</a></li>
+    <li><a href="#ads">Ads</a></li>
+    <li><a href="#video">Video</a></li>
     <li><a href="#seo">SEO</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -259,17 +291,15 @@ footer p{font-family:var(--fm);font-size:.56rem;letter-spacing:.08em;text-transf
   </div>
   <div class="proj-body">
     <div></div>
-    <p class="desc">Rebranding exercise for The Ordinary, reimagined as ORDI NARY. — preserving the brand's clinical directness while elevating the aesthetic through die-cut formats. Includes business cards, product label redesigns for 4 SKUs (Hyaluronic Acid, Niacinamide, Caffeine Eye Serum, AHA/BHA Peeling), and a digital UX wireframing phase for the self-checkout experience.</p>
+    <p class="desc">Rebranding exercise for The Ordinary, reimagined as ORDI NARY. — preserving the brand's clinical directness while elevating the aesthetic through die-cut formats. Includes business cards, product label redesigns for 4 SKUs (Hyaluronic Acid, Niacinamide, Caffeine Eye Serum, AHA/BHA Peeling).</p>
     <div class="meta">
-      <div class="m-row"><span class="m-lbl">Type</span><span class="m-val">Rebranding · Packaging · Die-Cut · UX Wireframing</span></div>
+      <div class="m-row"><span class="m-lbl">Type</span><span class="m-val">Rebranding · Packaging · Die-Cut</span></div>
       <div class="m-row"><span class="m-lbl">Products</span><span class="m-val">4 SKUs redesigned</span></div>
-      <div class="m-row"><span class="m-lbl">UX</span><span class="m-val">Zara self-checkout wireframe — 6 screens</span></div>
     </div>
   </div>
   <div class="ig" style="grid-template-columns:1fr 1fr;">
     <div class="cell r169"><img src="images/img-08.jpg" alt="The Ordinary die-cut"><div class="cap">Rebranding & Die-Cut Cards</div></div>
     <div class="cell r169"><img src="images/img-09.jpg" alt="The Ordinary packaging"><div class="cap">Packaging — Skincare Die-Cuts</div></div>
-    <div class="cell spana r169"><img src="images/img-10.jpg" alt="Wireframing"><div class="cap">UX Wireframing — Self-Checkout Flow</div></div>
   </div>
 </div>
 
@@ -297,7 +327,6 @@ footer p{font-family:var(--fm);font-size:.56rem;letter-spacing:.08em;text-transf
     <div class="cell r169"><img src="images/img-14.png" alt="Arabesco packaging"><div class="cap">Packaging — Shopping Bag + Gift Box</div></div>
   </div>
 </div>
-</div>
 
 <!-- TORO -->
 <div id="toro" class="proj">
@@ -321,6 +350,9 @@ footer p{font-family:var(--fm);font-size:.56rem;letter-spacing:.08em;text-transf
   </div>
 </div>
 
+<!-- ═══ UX/UI ═══ -->
+<div id="uxui"></div>
+
 <!-- NEEU -->
 <div id="neeu" class="proj">
   <div class="proj-head">
@@ -340,6 +372,33 @@ footer p{font-family:var(--fm);font-size:.56rem;letter-spacing:.08em;text-transf
   </div>
   <div class="ig" style="grid-template-columns:1fr;margin-bottom:3rem;">
     <div class="cell" style="aspect-ratio:3/4;"><img src="images/img-16.jpg" alt="NEEU Design Studio poster" style="object-fit:contain;background:#f5f5f5;"><div class="cap">NEEU Design Studio — Poster completo · Pricing · App UI</div></div>
+  </div>
+</div>
+
+<!-- UX/UI PROTOTYPE -->
+<div id="prototype" class="proj">
+  <div class="proj-head">
+    <span class="proj-idx">Interactive<br>Prototype</span>
+    <h2 class="proj-title">Figma Prototype<span class="sub">Explore it live</span></h2>
+    <span class="badge">Figma · Interactive</span>
+  </div>
+  <div class="proj-body">
+    <div></div>
+    <p class="desc">Click through the prototype directly on this page — no need to leave the portfolio. Prefer a bigger view? Open it in Figma.</p>
+    <div class="meta">
+      <div class="m-row"><span class="m-lbl">Tool</span><span class="m-val">Figma</span></div>
+      <div class="m-row"><span class="m-lbl">Format</span><span class="m-val">Embedded interactive prototype</span></div>
+    </div>
+  </div>
+  <div class="proto">
+    <div class="proto-bar">
+      <span class="proto-lbl">Figma — Live View</span>
+      <a class="proto-open" href="https://www.figma.com/proto/XVxecJ9wrn8Od2bZjWZkM8/Untitled?node-id=1-2&amp;p=f&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=1%3A2" target="_blank" rel="noopener">Open in Figma ↗</a>
+    </div>
+    <div class="proto-stage">
+      <p class="proto-load">Loading prototype…<br><a href="https://www.figma.com/proto/XVxecJ9wrn8Od2bZjWZkM8/Untitled?node-id=1-2&amp;p=f&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=1%3A2" target="_blank" rel="noopener">Open in Figma ↗</a></p>
+      <iframe class="proto-frame" title="Figma prototype" src="https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Fproto%2FXVxecJ9wrn8Od2bZjWZkM8%2FUntitled%3Fnode-id%3D1-2%26p%3Df%26scaling%3Dmin-zoom%26content-scaling%3Dfixed%26page-id%3D0%253A1%26starting-point-node-id%3D1%253A2" loading="lazy" allowfullscreen onload="this.classList.add('on')"></iframe>
+    </div>
   </div>
 </div>
 
@@ -467,6 +526,32 @@ footer p{font-family:var(--fm);font-size:.56rem;letter-spacing:.08em;text-transf
   </div>
 </div>
 
+<!-- ═══ ADS ═══ -->
+<section id="ads" class="sec">
+  <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Ads</h2></div>
+  <div class="ads">
+    <div class="ads-col">
+      <div class="cell r916" style="--o:2"><img src="images/ad-cheap-treats-9x16.jpg" alt="Cheap Treats — BOGO everything ad (9:16)" width="1080" height="1920" loading="lazy" decoding="async"></div>
+      <div class="cell r916" style="--o:4"><img src="images/ad-ketokerri-9x16.jpg" alt="Ketokerri — Black Friday 25% off ad (9:16)" width="1080" height="1920" loading="lazy" decoding="async"></div>
+      <div class="cell r916" style="--o:5"><img src="images/ad-pen-run-9x16.jpg" alt="Pen Run — Fall for Your Next Pair ad (9:16)" width="1080" height="1920" loading="lazy" decoding="async"></div>
+    </div>
+    <div class="ads-col">
+      <div class="cell r11" style="--o:1"><img src="images/ad-cheap-treats-1x1.jpg" alt="Cheap Treats — Cheap Treats. Extra Treats. ad (1:1)" width="1080" height="1080" loading="lazy" decoding="async"></div>
+      <div class="cell r916" style="--o:7"><img src="images/ad-atome-9x16.jpg" alt="Atome Bakery — Try Atome ad (9:16)" width="1080" height="1920" loading="lazy" decoding="async"></div>
+      <div class="cell r11" style="--o:3"><img src="images/ad-ketokerri-1x1.jpg" alt="Ketokerri — Black Friday sale ad (1:1)" width="1080" height="1080" loading="lazy" decoding="async"></div>
+      <div class="cell r11" style="--o:6"><img src="images/ad-pen-run-1x1.gif" alt="Pen Run — Fall for Your Next Pair animated ad (1:1)" width="1080" height="1080" loading="lazy" decoding="async"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VIDEO ═══ -->
+<section id="video" class="sec">
+  <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">Video</h2></div>
+  <div class="vid">
+    <div class="cell r916"><video controls preload="metadata" playsinline poster="images/video-wintech-poster.jpg" aria-label="WinTech Racing video (9:16)"><source src="videos/wintech-racing-9x16.mp4" type="video/mp4"></video></div>
+  </div>
+</section>
+
 <!-- BAND 2 -->
 <div class="band">
   <div></div>
@@ -478,7 +563,7 @@ footer p{font-family:var(--fm);font-size:.56rem;letter-spacing:.08em;text-transf
 
 <!-- ═══ SEO ═══ -->
 <section id="seo" class="sec">
-  <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">SEO &<br>Digital Marketing</h2></div>
+  <div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">SEO &<br>Digital Marketing</h2></div>
   <div class="seo-ctx">
     <div></div>
     <p class="desc">Google Business Profile content creation and optimization for multi-location law firms across the United States. Produced during SEO Design Internship at LawRank Marketing — applying keyword intent, geo-targeting analysis, and UX-aligned messaging to increase local search visibility in competitive legal markets.</p>
@@ -501,7 +586,7 @@ footer p{font-family:var(--fm);font-size:.56rem;letter-spacing:.08em;text-transf
 
 <!-- ═══ PHOTOGRAPHY ═══ -->
 <section id="photo" class="sec">
-  <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">Photography</h2></div>
+  <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">Photography</h2></div>
   <div class="ig ig4" style="margin:0 3rem 3rem;">
     <div class="cell r34"><img src="images/img-37.jpg" alt="Studio photography"><div class="cap">Studio — B&W</div></div>
     <div class="cell r34"><img src="images/img-38.jpg" alt="Studio photography 2"><div class="cap">Studio — Portrait</div></div>
@@ -512,7 +597,7 @@ footer p{font-family:var(--fm);font-size:.56rem;letter-spacing:.08em;text-transf
 
 <!-- ═══ JEWELRY ═══ -->
 <section id="jewelry" class="sec">
-  <div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">Handcrafted<br>Jewelry</h2></div>
+  <div class="sec-head"><span class="sec-num">07</span><h2 class="sec-title">Handcrafted<br>Jewelry</h2></div>
   <div class="proj-body">
     <div></div>
     <p class="desc">Two years honing craft at CEDIJ — Centro de Diseño de Joyería de Jalisco — plus a course in wax modeling for casting techniques. Passion sparked in the artisan and jewelry markets of Pátzcuaro, drawn to ornate, vintage designs that carry the story behind each piece. Techniques: wax carving, silver casting, soldering, and metalwork.</p>
@@ -530,7 +615,7 @@ footer p{font-family:var(--fm);font-size:.56rem;letter-spacing:.08em;text-transf
 
 <!-- ═══ EXPERIENCE ═══ -->
 <section id="experience" class="sec">
-  <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">Experience<br>& Skills</h2></div>
+  <div class="sec-head"><span class="sec-num">08</span><h2 class="sec-title">Experience<br>& Skills</h2></div>
 
   <div style="display:grid;grid-template-columns:100px 1fr 1fr;gap:2rem;padding:0 3rem 2rem;">
     <div></div>
@@ -630,11 +715,16 @@ footer p{font-family:var(--fm);font-size:.56rem;letter-spacing:.08em;text-transf
       <p class="contact-big">Get in<br><span style="color:var(--accent);">Touch</span></p>
     </div>
     <div class="contact-links">
-      <div class="c-link"><span class="c-lbl">Email</span><a href="/cdn-cgi/l/email-protection#a8cbcbc0cddac5c7dbc1c4c4c79fe8cfc5c9c1c486cbc7c5" class="c-val"><span class="__cf_email__" data-cfemail="9efdfdf6fbecf3f1edf7f2f2f1a9def9f3fff7f2b0fdf1f3">[email&#160;protected]</span></a></div>
+      <div class="c-link"><span class="c-lbl">Email</span><a href="mailto:cchermosillo7@gmail.com" class="c-val">cchermosillo7@gmail.com</a></div>
       <div class="c-link"><span class="c-lbl">Phone</span><a href="tel:+523321365391" class="c-val">+52 (33) 21 36 53 91</a></div>
       <div class="c-link"><span class="c-lbl">LinkedIn</span><a href="https://www.linkedin.com/in/carolinacarrerahermosillo/" target="_blank" class="c-val">carolinacarrerahermosillo</a></div>
       <div class="c-link"><span class="c-lbl">Location</span><span class="c-val" style="cursor:default;">Guadalajara, Jalisco · México</span></div>
     </div>
   </div>
   <footer>
-    <p>Carolina Carrera H
+    <p>Carolina Carrera H. © 2025</p>
+  </footer>
+</section>
+
+</body>
+</html>
